@@ -58,19 +58,17 @@ El uso de JWT permite proteger rutas y operaciones, mientras que React facilita 
 1. **Registro de usuario en Postman:**
    ![Registro de usuario en Postman](https://i.imgur.com/ZVoTYg5.png)
 2. **Login y obtención de token en Postman:**
-   ![Login y token en Postman](./screenshots/2-login-token-postman.png)
+   ![Login y token en Postman](https://i.imgur.com/CqAeYMR.png)
 3. **Pantalla de login en React:**
-   ![Pantalla de login en React](./screenshots/3-login-react.png)
+   ![Pantalla de login en React](https://i.imgur.com/chDvzHF.png)
 4. **Vista principal tras login:**
-   ![Vista principal tras login](./screenshots/4-home-cursos.png)
+   ![Vista principal tras login](https://i.imgur.com/KpLIf2i.png)
 5. **Token en localStorage:**
-   ![Token en localStorage](./screenshots/5-token-localstorage.png)
-6. **Creación de un nuevo curso:**
-   ![Creación de curso](./screenshots/6-crear-curso.png)
-7. **Edición de un curso:**
-   ![Edición de curso](./screenshots/7-editar-curso.png)
-8. **Eliminación de cursos:**
-   ![Eliminación de cursos](./screenshots/8-eliminar-curso.png)
+   ![Token en localStorage](https://i.imgur.com/e9gNcUs.png)
+6. **Edición de un curso:**
+   ![Edición de curso](https://i.imgur.com/r0t2sWZ.png)
+7. **Eliminación de cursos:**
+   ![Eliminación de cursos](https://i.imgur.com/45jDC16.png)
 
 ---
 
