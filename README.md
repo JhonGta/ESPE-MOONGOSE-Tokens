@@ -56,7 +56,7 @@ El uso de JWT permite proteger rutas y operaciones, mientras que React facilita 
 ## 6. GRÁFICOS O FOTOGRAFÍAS
 
 1. **Registro de usuario en Postman:**
-   ![Registro de usuario en Postman](./screenshots/1-register-postman.png)
+   ![Registro de usuario en Postman](https://i.imgur.com/ZVoTYg5.png)
 2. **Login y obtención de token en Postman:**
    ![Login y token en Postman](./screenshots/2-login-token-postman.png)
 3. **Pantalla de login en React:**
