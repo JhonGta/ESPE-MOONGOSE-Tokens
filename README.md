@@ -43,11 +43,28 @@ espe-mongoose/
    ```bash
    npm install
    ```
-2. Inicia el servidor:
+2. Asegúrate de tener MongoDB corriendo (puedes usar Docker):
+   ```bash
+   docker-compose up -d
+   ```
+3. Inicia el servidor:
    ```bash
    npm start
    ```
-3. El servidor estará disponible en `http://localhost:8080`.
+4. El servidor estará disponible en `http://localhost:8080`.
+5. Ve a la carpeta del frontend:
+   ```bash
+   cd consumo-api-rest
+   ```
+6. Instala dependencias:
+   ```bash
+   npm install
+   ```
+7. Inicia el frontend:
+   ```bash
+   npm start
+   ```
+8. La aplicación estará disponible en `http://localhost:3000`.
 
 ---
 
@@ -58,12 +75,14 @@ espe-mongoose/
 - `GET    /course/:id`     : Obtiene un curso por su ID.
 - `PUT    /course/:id`     : Actualiza el número de temas de un curso.
 - `DELETE /course/:id`     : Elimina un curso por su ID.
+- `POST   /auth/register`  : Registra un nuevo usuario.
+- `POST   /auth/login`     : Inicia sesión y obtiene un token JWT.
 
 ---
 
 ## Capturas de Pantalla
 
-A continuación se presentan capturas que evidencian la correcta organización del proyecto y el funcionamiento de los endpoints principales utilizando Postman:
+A continuación se presentan capturas que evidencian la correcta organización del proyecto y el funcionamiento de los endpoints principales utilizando Postman y la interfaz en React:
 
 ### 1. Estructura del Proyecto y Ejecución Exitosa
 
@@ -128,11 +147,85 @@ En esta imagen se muestra la petición DELETE a `/course/{id}`. La respuesta ind
 
 ---
 
+### 7. Registro de Usuario (POST)
+
+![Registro de usuario en Postman](https://i.imgur.com/XXXXXXX.png)
+
+Captura de Postman utilizando el método POST en la ruta `/auth/register` para registrar un nuevo usuario. Se envía la petición con el cuerpo:
+```json
+{
+  "username": "admin",
+  "password": "admin123"
+}
+```
+Y se obtiene la respuesta:
+```json
+{
+  "message": "Usuario creado"
+}
+```
+
+---
+
+### 8. Login y Obtención de Token (POST)
+
+![Login en Postman](https://i.imgur.com/XXXXXXX.png)
+
+Captura de la petición POST a `/auth/login` con las credenciales del usuario registrado. La respuesta incluye el token JWT:
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+
+---
+
+### 9. Pantalla de Login en React
+
+![Pantalla de login en React](https://i.imgur.com/XXXXXXX.png)
+
+Interfaz de usuario para el inicio de sesión, donde se ingresan las credenciales registradas.
+
+---
+
+### 10. Vista Principal tras Login
+
+![Vista principal tras login](https://i.imgur.com/XXXXXXX.png)
+
+Pantalla de bienvenida al sistema, mostrando el listado de cursos existentes y un formulario para crear nuevos cursos.
+
+---
+
+### 11. Token en localStorage
+
+![Token en localStorage](https://i.imgur.com/XXXXXXX.png)
+
+Visualización del token JWT almacenado en el navegador, utilizado para autenticar las operaciones CRUD.
+
+---
+
+### 12. Edición de un Curso
+
+![Edición de un curso](https://i.imgur.com/XXXXXXX.png)
+
+Formulario de edición de curso, mostrando los datos actuales del curso y permitiendo su actualización.
+
+---
+
+### 13. Eliminación de Cursos
+
+![Eliminación de cursos](https://i.imgur.com/XXXXXXX.png)
+
+Vista tras eliminar un curso, donde solo permanece el curso actualizado.
+
+---
+
 ## Conclusiones
 
 - La correcta organización del backend facilita el mantenimiento y la escalabilidad del proyecto.
 - El uso de Mongoose simplifica la interacción con MongoDB y permite definir validaciones a nivel de modelo.
 - Probar los endpoints con Postman asegura que la API responde correctamente a las operaciones CRUD básicas.
+- La implementación de JWT proporciona un mecanismo seguro de autenticación y autorización.
 - Separar la lógica en controladores, modelos y rutas permite un desarrollo más limpio y profesional.
 
 ---
@@ -152,3 +245,7 @@ En esta imagen se muestra la petición DELETE a `/course/{id}`. La respuesta ind
 - [Documentación oficial de Express](https://expressjs.com/)
 - [Documentación oficial de Mongoose](https://mongoosejs.com/)
 - [Postman](https://www.postman.com/)
+
+---
+
+**Desarrollado para la Universidad de las Fuerzas Armadas ESPE**

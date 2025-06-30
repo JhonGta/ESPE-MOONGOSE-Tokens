@@ -20,11 +20,9 @@ exports.getCourseById = (req, res) => {
 };
 
 exports.createCourse = (req, res) => {
-  Course.create({
-    title: "Curso de Express",
-    description: "Curso de Express para aprender a manejar Backend con Node",
-    numberOfTopics: 5,
-  })
+  // Usar los datos enviados por el usuario
+  const { title, description, numberOfTopics } = req.body;
+  Course.create({ title, description, numberOfTopics })
     .then((doc) => res.json(doc))
     .catch((error) => {
       console.log("Error al crear el curso:", error);
@@ -34,10 +32,10 @@ exports.createCourse = (req, res) => {
 
 exports.updateCourse = (req, res) => {
   const id = req.params.id;
+  // Permitir actualizar cualquier campo enviado
   Course.findByIdAndUpdate(
     { _id: id },
-    { numberOfTopics: 20 },
-    { publishedAt: new Date() },
+    req.body,
     { new: true }
   )
     .then((course) => res.json(course))

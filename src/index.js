@@ -1,6 +1,7 @@
 // Archivo principal para levantar la app
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 require("./models/course");
 const courseRouter = require("./routers/courseRouter");
 const authRouter = require("./routers/authRouter");
@@ -12,6 +13,7 @@ mongoose.connect(connectionString)
   .catch((error) => console.error("Error de conexión a MongoDB:", error));
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {

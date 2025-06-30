@@ -7,7 +7,7 @@ const courseSchema = new Schema({
   },
   description: {
     type: String,
-    minlength: [10, "No se cumple con la longitud mínima de 10 caracteres"],
+    minlength: [3, "No se cumple con la longitud mínima de 3 caracteres"], // Cambiado a 3
     maxlength: 300,
   },
   numberOfTopics: {
